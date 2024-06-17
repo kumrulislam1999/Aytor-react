@@ -1,0 +1,27 @@
+h1,h2,h3,h4,h5,h6,p,ul,ol,span,b,pre,option,input,textarea,button,a{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    ;
+}
+
+a,a:hover,a.active{
+    text-decoration: none;
+    color: inherit;
+}
+ul,
+ol{
+    list-style:none;
+}
+
+button,
+input,
+textarea,
+textarea:focus,
+.input-group,
+input:focus,
+.form-control{
+    outline: none;
+    background-color: inherit;
+    order: none;
+}

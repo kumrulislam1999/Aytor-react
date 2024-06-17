@@ -1,0 +1,510 @@
+/* ===== Import Google Fonts here ===== */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/* ===== Start Color Variable here ===== */
+$white_color: #ffffff;
+$black_color: #000000;
+$paragraph_color: #444444;
+$black_light_color: #313529;
+$heading_color: #11161e;
+$section_bg_color: #f1f3f4;
+$orange_color: #ff6f61;
+
+/* ===== End Color Variable  here ===== */
+
+// font-family: "Roboto", sans-serif;
+// font-family: "Josefin Sans", sans-serif;
+
+/* ===== Start Heading Mixin Here ===== */
+/* === Heading 1 === */
+@mixin header_1(
+  $f_size: 58px,
+  $l_height: 67px,
+  $f_weight: 700,
+  $padding_top: 10px,
+  $padding_bottom: 10px,
+  $color: $white_color
+) {
+  font-size: $f_size;
+  line-height: $l_height;
+  font-weight: $f_weight;
+  padding: $padding_top auto $padding_bottom;
+  font-family: "Josefin Sans", sans-serif;
+
+  /* === Start Responsive here === */
+  @include device_xl {
+    font-size: 52px;
+    line-height: 62px;
+  }
+  @include device_lg {
+    font-size: 48px;
+    line-height: 56px;
+  }
+  @include device_md {
+    font-size: 42px;
+    line-height: 50px;
+  }
+  @include device_sm {
+    font-size: 37px;
+    line-height: 45px;
+  }
+  @include device_xsm {
+    font-size: 30px;
+    line-height: 38px;
+  }
+}
+
+/* === Heading 2 === */
+@mixin header_2(
+  $f_size: 55px,
+  $l_height: 65px,
+  $f_weight: 700,
+  $padding_top: 10px,
+  $padding_bottom: 10px,
+  $color: $white_color
+) {
+  font-size: $f_size;
+  line-height: $l_height;
+  font-weight: $f_weight;
+  padding: $padding_top auto $padding_bottom;
+  font-family: "Josefin Sans", sans-serif;
+
+  /* === Start Responsive here === */
+  @include device_xl {
+    font-size: 50px;
+    line-height: 60px;
+  }
+  @include device_lg {
+    font-size: 45px;
+    line-height: 52px;
+  }
+  @include device_md {
+    font-size: 40px;
+    line-height: 46px;
+  }
+  @include device_sm {
+    font-size: 35px;
+    line-height: 42px;
+  }
+  @include device_xsm {
+    font-size: 28px;
+    line-height: 35px;
+  }
+}
+
+/* === Heading 3 === */
+@mixin header_3(
+  $f_size: 36px,
+  $l_height: 45px,
+  $f_weight: 700,
+  $padding_top: 0px,
+  $padding_bottom: 40px,
+  $color: $heading_color
+) {
+  font-size: $f_size;
+  line-height: $l_height;
+  font-weight: $f_weight;
+  padding: $padding_top auto $padding_bottom;
+  font-family: "Josefin Sans", sans-serif;
+
+  /* === Start Responsive here === */
+
+  @include device_lg {
+    margin-bottom: 36px;
+  }
+  @include device_md {
+    font-size: 30px;
+    line-height: 38px;
+    margin-bottom: 30px;
+  }
+  @include device_sm {
+    font-size: 26px;
+    line-height: 34px;
+    margin-bottom: 25px;
+  }
+  @include device_xsm {
+    font-size: 25px;
+    line-height: 30px;
+    margin-bottom: 20px;
+  }
+}
+
+/* === Heading 4 === */
+@mixin header_4(
+  $f_size: 26px,
+  $l_height: 34px,
+  $f_weight: 700,
+  $padding_top: 0px,
+  $padding_bottom: 36px,
+  $color: $white_color
+) {
+  font-size: $f_size;
+  line-height: $l_height;
+  font-weight: $f_weight;
+  padding: $padding_top auto $padding_bottom;
+  font-family: "Josefin Sans", sans-serif;
+
+  /* === Start Responsive here === */
+
+  @include device_lg {
+    font-size: 24px;
+    margin-bottom: 32px;
+    line-height: 30px;
+  }
+  @include device_md {
+    font-size: 22px;
+    line-height: 28px;
+    margin-bottom: 28px;
+  }
+  @include device_sm {
+    font-size: 20px;
+    line-height: 26px;
+    margin-bottom: 24px;
+  }
+  @include device_xsm {
+    font-size: 20px;
+    line-height: 26px;
+    margin-bottom: 20px;
+  }
+}
+
+/* === Heading 5 === */
+@mixin header_5(
+  $f_size: 24px,
+  $l_height: 30px,
+  $f_weight: 600,
+  $padding_top: 0px,
+  $padding_bottom: 16px,
+  $color: $white_color
+) {
+  font-size: $f_size;
+  line-height: $l_height;
+  font-weight: $f_weight;
+  padding: $padding_top auto $padding_bottom;
+  font-family: "Josefin Sans", sans-serif;
+
+  /* === Start Responsive here === */
+
+  @include device_lg {
+    font-size: 22px;
+    line-height: 28px;
+  }
+  @include device_md {
+    font-size: 22px;
+    line-height: 28px;
+  }
+  @include device_sm {
+    font-size: 20px;
+    line-height: 26px;
+    padding-bottom: 10px;
+  }
+  @include device_xsm {
+    font-size: 20px;
+    line-height: 26px;
+    padding-bottom: 10px;
+  }
+}
+/* === Heading 6 === */
+@mixin header_6(
+  $f_size: 20px,
+  $l_height: 28px,
+  $f_weight: 700,
+  $padding_top: 10px,
+  $padding_bottom: 10px,
+  $color: $heading_color
+) {
+  font-size: $f_size;
+  line-height: $l_height;
+  font-weight: $f_weight;
+  padding: $padding_top auto $padding_bottom;
+  font-family: "Josefin Sans", sans-serif;
+
+  /* === Start Responsive here === */
+
+  @include device_lg {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  @include device_md {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  @include device_sm {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  @include device_xsm {
+    font-size: 18px;
+    line-height: 26px;
+  }
+}
+/* ===== End Heading Mixin Here ===== */
+
+/* ===== Start paragraph Mixin Here ===== */
+/* === paragraph normal === */
+@mixin paragraph_normal(
+  $f_size: 16px,
+  $l_height: 28px,
+  $f_weight: 400,
+  $padding_top: 0px,
+  $padding_bottom: 0px,
+  $color: $paragraph_color
+) {
+  font-size: $f_size;
+  line-height: $l_height;
+  font-weight: $f_weight;
+  padding: $padding_top auto $padding_bottom;
+  font-family: "Roboto", sans-serif;
+}
+
+/* === paragraph normal === */
+@mixin paragraph_title(
+  $f_size: 16px,
+  $l_height: 28px,
+  $f_weight: 600,
+  $padding_top: 0px,
+  $padding_bottom: 0px,
+  $color: $paragraph_color
+) {
+  font-size: $f_size;
+  line-height: $l_height;
+  font-weight: $f_weight;
+  padding: $padding_top auto $padding_bottom;
+  font-family: "Roboto", sans-serif;
+}
+/* ===== End paragraph Mixin Here ===== */
+
+/* ==== Button normal === */
+@mixin button(
+  $f_size: 16px,
+  $l_height: 28px,
+  $f_weight: 600,
+  $padding_top: 10px,
+  $padding_bottom: 10px,
+  $padding_left: 35px,
+  $padding_right: 35px,
+  $color: $white_color,
+  $bg_color: $orange_color,
+  $b_color: default
+) {
+  font-size: $f_size;
+  line-height: $l_height;
+  font-weight: $f_weight;
+  padding: $padding_top $padding_right $padding_bottom $padding_left;
+  font-family: "Roboto", sans-serif;
+  background-color: $bg_color;
+  border: 1px solid $b_color;
+
+  /* === Start Responsive here === */
+  @include device_lg {
+    padding: 12px 30px;
+  }
+  @include device_md {
+    padding: 10px 25px;
+  }
+  @include device_sm {
+    padding: 10px 25px;
+  }
+  @include device_xsm {
+    padding: 8px 20px;
+  }
+}
+
+/* === Button normal === */
+@mixin icon_lg(
+  $f_size: 22px,
+  $f_weight: 600,
+  $color: $white_color,
+  $bg_color: $orange_color,
+  $width: 40px,
+  $height: 40px,
+  $b_radius: default,
+  $b_color: $orange_color
+) {
+  font-size: $f_size;
+  line-height: $height;
+  font-weight: $f_weight;
+  width: $width;
+  height: $height;
+  font-family: "Roboto", sans-serif;
+  background-color: $bg_color;
+  border-radius: $b_radius;
+  border: 1px solid $b_color;
+  text-align: center;
+
+  /* === Start Responsive here === */
+  @include device_lg {
+    width: 36px;
+    height: 36px;
+  }
+  @include device_md {
+    width: 32x;
+    height: 32px;
+  }
+  @include device_sm {
+    width: 28px;
+    height: 28px;
+  }
+  @include device_xsm {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@mixin icon_sm(
+  $f_size: 22px,
+  $f_weight: 600,
+  $color: $heading_color,
+  $bg_color: $white_color,
+  $width: 36px,
+  $height: 36px,
+  $b_radius: 50%,
+  $b_color: $orange_color
+) {
+  font-size: $f_size;
+  line-height: $height;
+  font-weight: $f_weight;
+  width: $width;
+  height: $height;
+  font-family: "Roboto", sans-serif;
+  background-color: $bg_color;
+  border-radius: $b_radius;
+  border: 1px solid $b_color;
+  text-align: center;
+}
+/* ===== End Button Mixin Here ===== */
+
+/* ===== Start Button Mixin Here ===== */
+@mixin hover(
+  $color: default,
+  $bg_color: default,
+  $transition: 0.4s,
+  $visibility: default
+) {
+  color: $color;
+  background-color: $bg_color;
+  transition: $transition;
+  visibility: $visibility;
+}
+@mixin show_hide($display: default, $transform: default, $transition: 0.4s) {
+  display: $display;
+  transform: $transform;
+  transition: $transition;
+}
+@mixin display_flex($display: flex, $a_items: center, $j_content: center) {
+  display: $display;
+  align-items: $a_items;
+  justify-content: $j_content;
+}
+@mixin bg_image(
+  $bg_color: default,
+  $bg_position: center,
+  $bg_size: cover,
+  $bg_repeat: no-repeat
+) {
+  background-color: $bg_color;
+  background-position: $bg_position;
+  background-repeat: $bg_repeat;
+  background-size: $bg_size;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin after_before(
+  $content: "",
+  $position: absolute,
+  $inset: 0,
+  $top: default,
+  $bottom: default,
+  $right: default,
+  $left: default,
+  $width: 100%,
+  $height: 100%,
+  $z_index: default,
+  $bg_color: default
+) {
+  content: $content;
+  position: $position;
+  inset: $inset;
+  top: $top;
+  right: $right;
+  left: $left;
+  bottom: $bottom;
+  width: $width;
+  height: $height;
+  z-index: $z_index;
+  background-color: $bg_color;
+}
+/* ===== End Button Mixin Here ===== */
+
+.section_space {
+  margin: 100px default;
+
+  /* === Start Responsive here === */
+//   @include device_lg {
+//     margin: 80px 0;
+//   }
+//   @include device_md {
+//     margin: 70px default;
+//   }
+//   @include device_sm {
+//     margin: 60px default;
+//   }
+//   @include device_xsm {
+//     margin: 50px default;
+//   }
+}
+.section_space {
+  padding: 100px;
+  /* === Start Responsive here === */
+//   @include device_lg {
+//     padding: 80px;
+//   }
+//   @include device_md {
+//     padding: 70px;
+//   }
+//   @include device_sm {
+//     padding: 60px;
+//   }
+//   @include device_xsm {
+//     padding: 50px;
+//   }
+}
+
+.item_padding {
+  padding: 35px;
+}
+
+/* ===== Start Device Responsive Mixin Size Here ===== */
+
+@mixin device_xxl {
+  @media (min-width: 1400px) {
+    @content;
+  }
+}
+@mixin device_xl {
+  @media (min-width: 1200px) and (max-width: 1399.98px) {
+    @content;
+  }
+}
+@mixin device_lg {
+  @media (min-width: 992px) and (max-width: 1299.98px) {
+    @content;
+  }
+}
+@mixin device_md {
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    @content;
+  }
+}
+@mixin device_sm {
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    @content;
+  }
+}
+@mixin device_xsm {
+  @media (min-width: 320px) and (max-width: 575.98px) {
+    @content;
+  }
+}
+/* ===== End Device Responsive Mixin Size Here ===== */
