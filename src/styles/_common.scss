@@ -148,6 +148,7 @@ $section_color: rgba(28, 185, 200, 0.1);
   font-weight: $f_weight;
   padding: $margin-top 0px $margin-bottom 0px;
   font-family: "Josefin Sans", sans-serif;
+  color: $color;
 
   /* === Start Responsive here === */
 
@@ -288,8 +289,8 @@ $section_color: rgba(28, 185, 200, 0.1);
   $f_weight: 600,
   $padding_top: 10px,
   $padding_bottom: 10px,
-  $padding_left: 35px,
-  $padding_right: 35px,
+  $padding_left: 30px,
+  $padding_right: 30px,
   $color: $orange_color,
   $bg_color: transparent,
   $b_color: $orange_color
@@ -305,16 +306,16 @@ $section_color: rgba(28, 185, 200, 0.1);
 
   /* === Start Responsive here === */
   @include device_lg {
-    padding: 12px 30px;
+    padding: 12px 27px;
   }
   @include device_md {
-    padding: 10px 25px;
+    padding: 10px 24px;
   }
   @include device_sm {
-    padding: 10px 25px;
+    padding: 8px 21px;
   }
   @include device_xsm {
-    padding: 8px 20px;
+    padding: 7px 17px;
   }
 }
 

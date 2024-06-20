@@ -1,0 +1,106 @@
+#authForm {
+  margin: 100px 0;
+  .form_box {
+    background-color: $orange_color;
+    padding: 50px;
+
+    h4 {
+      @include heading_4($color: $white_color);
+      text-align: center;
+    }
+    .input_group {
+      margin: 12px 0;
+      label {
+        @include paragraph_normal($color: $white_color, $padding_bottom: 5px);
+      }
+      .input_box {
+        @include display_flex;
+        background-color: $white_color;
+        border: 1px solid transparent;
+        span {
+          @include icon_sm($b_radius: none, $b_color: none);
+          @include display_flex($display: inline-flex);
+          border-right: 3px solid $orange_color;
+          background-color: $white_color;
+        }
+        input {
+          width: 100%;
+          @include paragraph_normal;
+          height: 40px;
+          padding: 0 20px;
+          background-color: rgba($orange_color, 0.1);
+        }
+        &:hover {
+          border-color: $white_color;
+          span {
+            background-color: $orange_color;
+            color: $white_color;
+            border-color: $white_color;
+          }
+        }
+      }
+    }
+
+    .submit_btn {
+      @include button($b_color: $white_color, $color: $white_color);
+      display: block;
+      margin: 40px auto 30px;
+      &:hover {
+        @include hover($bg_color: $white_color, $color: $orange_color);
+      }
+    }
+    p {
+      text-align: center;
+      @include paragraph_normal($color: $white_color);
+      a {
+        padding: 0 10px;
+        border-radius: 30px;
+        margin-left: 5px;
+        &:hover {
+          @include hover($bg_color: $white_color, $color: $orange_color);
+        }
+      }
+    }
+  }
+
+  /* ==== Devices Responsive ==== */
+  @include device_xl {
+    margin: 90px 0;
+  }
+  @include device_lg {
+    margin: 80px 0;
+  }
+  @include device_md {
+    margin: 70px 0;
+    .form_box {
+      padding: 40px;
+      h4 {
+        margin-bottom: 20px;
+      }
+    }
+  }
+  @include device_sm {
+    margin: 60px 0;
+    .form_box {
+      padding: 40px;
+      h4 {
+        margin-bottom: 20px;
+      }
+      .submit_btn {
+        margin: 30px auto 20px;
+      }
+    }
+  }
+  @include device_xsm {
+    margin: 50px 0;
+    .form_box {
+      padding: 30px 10px;
+      h4 {
+        margin-bottom: 10px;
+      }
+      .submit_btn {
+        margin: 30px auto 20px;
+      }
+    }
+  }
+}

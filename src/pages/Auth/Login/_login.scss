@@ -1,0 +1,39 @@
+#login {
+  .login_box {
+    background-color: $section_color;
+    margin: 100px 0;
+
+    .forgot_btn {
+      @include button($b_color: $white_color, $color: $white_color);
+      display: block;
+      margin: 40px auto 30px;
+      &:hover {
+        @include hover($bg_color: $white_color, $color: $orange_color);
+      }
+    }
+
+    /* ==== Responsive Devices ==== */
+    @include device_xl {
+      margin: 90px 0;
+    }
+    @include device_lg {
+      margin: 80px 0;
+    }
+    @include device_md {
+      margin: 70px 0;
+    }
+    @include device_sm {
+      margin: 60px 0;
+      .forgot_btn {
+        margin: 30px auto 20px;
+      }
+    }
+
+    @include device_xsm {
+      margin: 50px 0;
+      .forgot_btn {
+        margin: 30px auto 20px;
+      }
+    }
+  }
+}
