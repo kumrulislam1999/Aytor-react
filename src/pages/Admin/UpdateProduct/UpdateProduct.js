@@ -1,12 +1,20 @@
-import React from 'react'
-import Layout from '../../../components/Layout/Layout'
+import React from "react";
+import Layout from "../../../components/Layout/Layout";
+import PageBannar from "./../../../components/PageBannar/PageBannar";
+/* ==== Import Images ==== */
+
+import breadcrumbImg from "../../../images/AboutPage/breadcumb_bg_about.jpg";
 
 const UpdateProduct = () => {
   return (
     <Layout title={"Update Product - Aytor"}>
-      <h1>Update Product Page</h1>
-    </Layout>
-  )
-}
+      <div id="update_product">
+        <PageBannar title={"Update Product"} link={"Update Product"} img={breadcrumbImg} />
 
-export default UpdateProduct
+        <h1>Update Product Page</h1>
+      </div>
+    </Layout>
+  );
+};
+
+export default UpdateProduct;

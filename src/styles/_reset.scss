@@ -8,6 +8,7 @@ h1,h2,h3,h4,h5,h6,p,ul,ol,span,b,pre,option,input,textarea,button,a{
 a,a:hover,a.active{
     text-decoration: none;
     color: inherit;
+    display: inline-block;
 }
 ul,
 ol{
@@ -23,5 +24,7 @@ input:focus,
 .form-control{
     outline: none;
     background-color: inherit;
-    order: none;
+    border: none;
 }
+img{max-width: 100%;
+display: block;}

@@ -1,0 +1,268 @@
+#footer {
+  background-color: $section_bg_color;
+  padding: 100px 0 0;
+
+  #footer_top {
+    padding-bottom: 50px;
+    #content_text {
+      margin-right: 100px;
+      h3 {
+        @include heading_3;
+        margin: 0;
+      }
+      p {
+        @include paragraph_normal;
+        padding-top: 15px;
+      }
+    }
+
+    #subscription_box {
+      @include display_flex($j_content: space-between);
+      background-color: $white_color;
+      margin-left: 100px;
+      input {
+        @include paragraph_normal;
+        padding: 10px 25px;
+        width: 100%;
+      }
+      button {
+        @include button($color: $orange_color);
+        &:hover {
+          @include hover($color: $white_color, $bg_color: $orange_color);
+        }
+      }
+    }
+
+    /* === Start Responsive here === */
+
+    @include device_xl {
+      #content_text {
+        margin-right: 50px;
+        h3 {
+          margin: 0;
+        }
+        p {
+          padding-top: 15px;
+        }
+      }
+    }
+    @include device_lg {
+      #content_text {
+        margin-right: 0px;
+        h3 {
+          margin: 0;
+        }
+        p {
+          padding-top: 15px;
+        }
+      }
+      #subscription_box {
+        margin-left: 0;
+      }
+    }
+    @include device_md {
+      #content_text {
+        text-align: center;
+        margin-right: 0px;
+        h3 {
+          margin: 0;
+        }
+        p {
+          padding-top: 15px;
+        }
+      }
+
+      #subscription_box {
+        text-align: center;
+        margin: 40px 100px 0;
+      }
+    }
+    @include device_sm {
+      #content_text {
+        text-align: center;
+        margin-right: 0px;
+        h3 {
+          margin: 0;
+        }
+        p {
+          padding-top: 15px;
+        }
+      }
+      #subscription_box {
+        text-align: center;
+        margin: 40px 50px 0;
+      }
+    }
+    @include device_xsm {
+      #content_text {
+        text-align: center;
+        margin-right: 0px;
+        h3 {
+          margin: 0;
+        }
+        p {
+          padding-top: 15px;
+        }
+      }
+      #subscription_box {
+        text-align: center;
+        margin: 40px 0 0;
+      }
+    }
+  }
+  #footer_middle {
+    .container {
+      padding: 50px 0;
+      border: 1px solid $border_color;
+      border-left: none;
+      border-right: none;
+
+      #content_box {
+        h4 {
+          @include heading_4;
+        }
+        .logo {
+          width: 100px;
+          text-align: center;
+          img {
+            display: block;
+            margin: auto;
+          }
+        }
+        p {
+          @include paragraph_normal($padding_top: 15px, $padding_bottom: 15px);
+        }
+        #social_media {
+          @include display_flex($display: inline-flex);
+          a {
+            @include display_flex();
+            @include icon_sm($b_radius: none);
+            margin: 5px;
+            &:hover {
+              @include hover($bg_color: $orange_color, $color: $white_color);
+            }
+          }
+        }
+        #footer_menu1,
+        #footer_menu2,
+        #footer_menu3 {
+          a {
+            @include paragraph_normal($padding_bottom: 10px);
+            &:hover {
+              @include hover($color: $orange_color);
+            }
+          }
+        }
+        #address_menu {
+          a {
+            @include display_flex($j_content: start);
+            @include paragraph_normal;
+            .icon {
+              @include icon_sm($b_color: none, $b_radius: none);
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+
+      /*  ===== Responsive Device ===== */
+      @include device_lg {
+      }
+      @include device_md {
+        .weiget4,
+        .weiget5 {
+          #content_box {
+            margin-top: 40px;
+          }
+        }
+      }
+      @include device_sm {
+        .weiget3,
+        .weiget4,
+        .weiget5 {
+          #content_box {
+            margin-top: 40px;
+          }
+        }
+      }
+
+      @include device_xsm {
+        text-align: center;
+
+        .weiget2,
+        .weiget3,
+        .weiget4,
+        .weiget5 {
+          #content_box {
+            margin-top: 30px;
+          }
+        }
+      }
+    }
+  }
+
+  #footer_bottom {
+    margin-top: 100px;
+    background-color: $section_color;
+    padding: 15px 0;
+    .text_content {
+      margin-right: auto;
+      p {
+        @include paragraph_normal;
+      }
+    }
+    .payment {
+      margin-left: auto;
+      text-align: right;
+      img {
+        margin-left: auto;
+      }
+    }
+
+    /*  ===== Responsive Device ===== */
+    @include device_lg {
+      margin-top: 80px;
+    }
+    @include device_md {
+      margin-top: 70px;
+    }
+    @include device_sm {
+      text-align: center;
+      margin-top: 60px;
+
+      .payment {
+        margin-top: 20px;
+        img {
+          margin: auto;
+        }
+      }
+    }
+
+    @include device_xsm {
+      text-align: center;
+      margin-top: 50px;
+
+      .payment {
+        margin-top: 20px;
+        img {
+          margin: auto;
+        }
+      }
+    }
+  }
+
+  /*  ===== Responsive Device ===== */
+  @include device_lg {
+    padding-top: 80px;
+  }
+  @include device_md {
+    padding-top: 70px;
+  }
+  @include device_sm {
+    padding-top: 60px;
+  }
+
+  @include device_xsm {
+    padding-top: 50px;
+  }
+}

@@ -1,0 +1,47 @@
+#pageBannar {
+  .bg_image_box {
+    position: relative;
+    @include bg_image;
+    padding: 150px 0;
+    z-index: 1;
+    &::after {
+      @include after_before($bg_color: rgba($black_color, 0.7), $z_index: -1);
+    }
+
+    #text_content {
+      @include display_flex;
+      flex-direction: column;
+      h2 {
+        @include heading_2;
+      }
+      .breadcrumb {
+        .breadcrumb-item::before {
+          color: $white_color;
+        }
+        a {
+          @include paragraph_normal($color: $white_color);
+        }
+      }
+    }
+
+    /* ==== Responsive Devices ==== */
+    @include device_xxl {
+      padding: 140px 0;
+    }
+    @include device_xl {
+      padding: 120px 0;
+    }
+    @include device_lg {
+      padding: 100px 0;
+    }
+    @include device_md {
+      padding: 80px 0;
+    }
+    @include device_sm {
+      padding: 70px 0;
+    }
+    @include device_xsm {
+      padding: 50px 0;
+    }
+  }
+}

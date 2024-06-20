@@ -8,7 +8,10 @@ $paragraph_color: #444444;
 $black_light_color: #313529;
 $heading_color: #11161e;
 $section_bg_color: #f1f3f4;
-$orange_color: #ff6f61;
+$orange_color: #ff7301;
+$border_color: #e0e0e0;
+$blue_color: #3166f8;
+$section_color: rgba(28, 185, 200, 0.1);
 
 /* ===== End Color Variable  here ===== */
 
@@ -17,7 +20,7 @@ $orange_color: #ff6f61;
 
 /* ===== Start Heading Mixin Here ===== */
 /* === Heading 1 === */
-@mixin header_1(
+@mixin heading_1(
   $f_size: 58px,
   $l_height: 67px,
   $f_weight: 700,
@@ -49,16 +52,16 @@ $orange_color: #ff6f61;
     line-height: 45px;
   }
   @include device_xsm {
-    font-size: 30px;
+    font-size: 34px;
     line-height: 38px;
   }
 }
 
 /* === Heading 2 === */
-@mixin header_2(
+@mixin heading_2(
   $f_size: 55px,
   $l_height: 65px,
-  $f_weight: 700,
+  $f_weight: 800,
   $padding_top: 10px,
   $padding_bottom: 10px,
   $color: $white_color
@@ -66,8 +69,9 @@ $orange_color: #ff6f61;
   font-size: $f_size;
   line-height: $l_height;
   font-weight: $f_weight;
-  padding: $padding_top auto $padding_bottom;
+  padding: $padding_top 0 $padding_bottom 0;
   font-family: "Josefin Sans", sans-serif;
+  color: $color;
 
   /* === Start Responsive here === */
   @include device_xl {
@@ -87,24 +91,25 @@ $orange_color: #ff6f61;
     line-height: 42px;
   }
   @include device_xsm {
-    font-size: 28px;
+    font-size: 30px;
     line-height: 35px;
   }
 }
 
 /* === Heading 3 === */
-@mixin header_3(
+@mixin heading_3(
   $f_size: 36px,
   $l_height: 45px,
   $f_weight: 700,
-  $padding_top: 0px,
-  $padding_bottom: 40px,
+  $margin-top: 0px,
+  $margin-bottom: 40px,
   $color: $heading_color
 ) {
   font-size: $f_size;
   line-height: $l_height;
   font-weight: $f_weight;
-  padding: $padding_top auto $padding_bottom;
+  margin: $margin-top auto $margin-bottom;
+  color: $color;
   font-family: "Josefin Sans", sans-serif;
 
   /* === Start Responsive here === */
@@ -130,18 +135,18 @@ $orange_color: #ff6f61;
 }
 
 /* === Heading 4 === */
-@mixin header_4(
+@mixin heading_4(
   $f_size: 26px,
   $l_height: 34px,
   $f_weight: 700,
-  $padding_top: 0px,
-  $padding_bottom: 36px,
+  $margin-bottom: 0px,
+  $margin-top: 0,
   $color: $white_color
 ) {
   font-size: $f_size;
   line-height: $l_height;
   font-weight: $f_weight;
-  padding: $padding_top auto $padding_bottom;
+  padding: $margin-top 0px $margin-bottom 0px;
   font-family: "Josefin Sans", sans-serif;
 
   /* === Start Responsive here === */
@@ -169,7 +174,7 @@ $orange_color: #ff6f61;
 }
 
 /* === Heading 5 === */
-@mixin header_5(
+@mixin heading_5(
   $f_size: 24px,
   $l_height: 30px,
   $f_weight: 600,
@@ -180,6 +185,7 @@ $orange_color: #ff6f61;
   font-size: $f_size;
   line-height: $l_height;
   font-weight: $f_weight;
+  color: $color;
   padding: $padding_top auto $padding_bottom;
   font-family: "Josefin Sans", sans-serif;
 
@@ -205,7 +211,7 @@ $orange_color: #ff6f61;
   }
 }
 /* === Heading 6 === */
-@mixin header_6(
+@mixin heading_6(
   $f_size: 20px,
   $l_height: 28px,
   $f_weight: 700,
@@ -253,8 +259,9 @@ $orange_color: #ff6f61;
   font-size: $f_size;
   line-height: $l_height;
   font-weight: $f_weight;
-  padding: $padding_top auto $padding_bottom;
+  padding: $padding_top 0 $padding_bottom 0;
   font-family: "Roboto", sans-serif;
+  color: $color;
 }
 
 /* === paragraph normal === */
@@ -269,7 +276,7 @@ $orange_color: #ff6f61;
   font-size: $f_size;
   line-height: $l_height;
   font-weight: $f_weight;
-  padding: $padding_top auto $padding_bottom;
+  padding: $padding_top 0 0 $padding_bottom;
   font-family: "Roboto", sans-serif;
 }
 /* ===== End paragraph Mixin Here ===== */
@@ -283,15 +290,16 @@ $orange_color: #ff6f61;
   $padding_bottom: 10px,
   $padding_left: 35px,
   $padding_right: 35px,
-  $color: $white_color,
-  $bg_color: $orange_color,
-  $b_color: default
+  $color: $orange_color,
+  $bg_color: transparent,
+  $b_color: $orange_color
 ) {
   font-size: $f_size;
   line-height: $l_height;
   font-weight: $f_weight;
   padding: $padding_top $padding_right $padding_bottom $padding_left;
   font-family: "Roboto", sans-serif;
+  color: $color;
   background-color: $bg_color;
   border: 1px solid $b_color;
 
@@ -314,8 +322,8 @@ $orange_color: #ff6f61;
 @mixin icon_lg(
   $f_size: 22px,
   $f_weight: 600,
-  $color: $white_color,
-  $bg_color: $orange_color,
+  $color: $orange_color,
+  $bg_color: transparent,
   $width: 40px,
   $height: 40px,
   $b_radius: default,
@@ -338,26 +346,26 @@ $orange_color: #ff6f61;
     height: 36px;
   }
   @include device_md {
-    width: 32x;
-    height: 32px;
+    width: 34x;
+    height: 34px;
   }
   @include device_sm {
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
   }
   @include device_xsm {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
   }
 }
 
 @mixin icon_sm(
   $f_size: 22px,
   $f_weight: 600,
-  $color: $heading_color,
-  $bg_color: $white_color,
-  $width: 36px,
-  $height: 36px,
+  $color: $orange_color,
+  $bg_color: transparent,
+  $width: 40px,
+  $height: 40px,
   $b_radius: 50%,
   $b_color: $orange_color
 ) {
@@ -366,6 +374,7 @@ $orange_color: #ff6f61;
   font-weight: $f_weight;
   width: $width;
   height: $height;
+  color: $color;
   font-family: "Roboto", sans-serif;
   background-color: $bg_color;
   border-radius: $b_radius;
@@ -386,10 +395,18 @@ $orange_color: #ff6f61;
   transition: $transition;
   visibility: $visibility;
 }
-@mixin show_hide($display: default, $transform: default, $transition: 0.4s) {
+@mixin show_hide(
+  $display: default,
+  $transform: default,
+  $transition: 0.4s,
+  $visibility: default,
+  $opacity: default
+) {
   display: $display;
   transform: $transform;
   transition: $transition;
+  visibility: $visibility;
+  opacity: $opacity;
 }
 @mixin display_flex($display: flex, $a_items: center, $j_content: center) {
   display: $display;
@@ -437,26 +454,26 @@ $orange_color: #ff6f61;
 }
 /* ===== End Button Mixin Here ===== */
 
-.section_space {
-  margin: 100px default;
+// .section_margin {
+//   margin: 100px 0;
 
-  /* === Start Responsive here === */
-//   @include device_lg {
-//     margin: 80px 0;
-//   }
-//   @include device_md {
-//     margin: 70px default;
-//   }
-//   @include device_sm {
-//     margin: 60px default;
-//   }
-//   @include device_xsm {
-//     margin: 50px default;
-//   }
-}
-.section_space {
-  padding: 100px;
-  /* === Start Responsive here === */
+//   /* === Start Responsive here === */
+//   // @include device_lg {
+//   //   margin: 80px 0;
+//   // }
+//   // @include device_md {
+//   //   margin: 70px 0;
+//   // }
+//   // @include device_sm {
+//   //   margin: 60px 0;
+//   // }
+//   // @include device_lg {
+//   //   margin: 50px 0;
+//   // }
+// }
+// .section_space {
+//   padding: 100px;
+//   /* === Start Responsive here === */
 //   @include device_lg {
 //     padding: 80px;
 //   }
@@ -469,11 +486,24 @@ $orange_color: #ff6f61;
 //   @include device_xsm {
 //     padding: 50px;
 //   }
-}
+// }
 
-.item_padding {
-  padding: 35px;
-}
+// .section_padding {
+//   padding: 100px 0;
+//   /* === Start Responsive here === */
+//   @include device_lg {
+//     padding: 80px 0;
+//   }
+//   @include device_md {
+//     padding: 70px 0;
+//   }
+//   @include device_sm {
+//     padding: 60px 0;
+//   }
+//   @include device_xsm {
+//     padding: 50px 0;
+//   }
+// }
 
 /* ===== Start Device Responsive Mixin Size Here ===== */
 
@@ -503,7 +533,7 @@ $orange_color: #ff6f61;
   }
 }
 @mixin device_xsm {
-  @media (min-width: 320px) and (max-width: 575.98px) {
+  @media (max-width: 575.98px) {
     @content;
   }
 }

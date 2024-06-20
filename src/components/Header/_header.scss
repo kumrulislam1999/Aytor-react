@@ -1,0 +1,346 @@
+#header {
+  #header_top {
+    padding: 10px 0;
+    background-color: $section_color;
+    #logo {
+      width: 150px;
+    }
+    #user_name {
+      @include heading_5($color: $orange_color, $padding_bottom: 0);
+      text-align: center;
+      padding: 0 !important;
+    }
+
+    #search_box {
+      @include display_flex($j_content: center);
+      background-color: transparent;
+      .form_box {
+        // border: 1px solid $orange_color;
+        width: 100%;
+        border-right: none;
+        @include display_flex;
+
+        background-color: $white_color;
+        transition: 0.4s;
+        transform-origin: right;
+        box-shadow: 0 0 3px 1px rgba($black_color, 0.2);
+        input {
+          width: 100%;
+          @include paragraph_normal($color: $orange_color);
+          padding: 5px 20px;
+          border-radius: 30px;
+        }
+        button {
+          @include icon_sm($b_radius: none, $width: 40px, $height: 40px);
+          @include display_flex;
+          &:hover {
+            @include hover($color: $white_color, $bg_color: $orange_color);
+          }
+        }
+      }
+    }
+  }
+  #header_bottom {
+    padding: 15px 0;
+    background-color: $orange_color;
+    .logo_box {
+      display: none;
+    }
+    #primary_menu {
+      @include display_flex($j_content: start);
+      .nav_item {
+        margin: 5px;
+        a {
+          @include paragraph_normal($f_weight: 600, $color: $white_color);
+          padding: 10px 15px;
+          transition: 0.4s;
+          &:hover,
+          &.active {
+            @include hover($bg_color: $white_color, $color: $orange_color);
+          }
+        }
+      }
+    }
+    #right_menu {
+      @include display_flex($j_content: end);
+
+      .icon_item {
+        position: relative;
+        margin-left: 5px;
+        a {
+          @include display_flex;
+          @include icon_sm(
+            $width: 40px,
+            $height: 40px,
+            $color: $white_color,
+            $bg_color: transparent
+          );
+
+          &:hover {
+            @include hover($color: $orange_color, $bg_color: $white_color);
+          }
+        }
+        .badge {
+          top: -10px;
+          right: -10px;
+          position: absolute;
+        }
+      }
+    }
+    #menu_toggler {
+      display: none;
+      button {
+        @include display_flex;
+        @include icon_sm(
+          $width: 40px,
+          $height: 40px,
+          $color: $white_color,
+          $bg_color: transparent
+        );
+        &:hover,
+        &.show {
+          @include hover($color: $orange_color, $bg_color: $white_color);
+        }
+      }
+    }
+  }
+
+  #header_side {
+    position: fixed;
+    inset: 0;
+    width: 0%;
+    transform: translateX(0);
+    transition: 0.5s;
+    opacity: 0;
+    height: 100%;
+    display: none;
+    background-color: rgba($black_color, 0.8);
+    #side_box {
+      overflow: hidden;
+      position: relative;
+      left: 0;
+      width: 0;
+      transform: translateX(0);
+      transition: 0.5s;
+      opacity: 0;
+      visibility: hidden;
+      background-color: $white_color;
+      height: 100%;
+      border-left: 10px solid $orange_color;
+      border-right: none;
+      #logo {
+        #menu_toggler {
+          @include icon_sm();
+          @include display_flex;
+          position: absolute;
+          right: 10px;
+          top: 10px;
+
+          &.show {
+            @include hover($color: $orange_color, $bg_color: $white_color);
+          }
+        }
+        text-align: center;
+        padding: 40px;
+        background-color: $section_color;
+        img {
+          margin: auto;
+        }
+      }
+
+      #header_side_bottom {
+        position: relative;
+        margin: 50px 30px;
+        height: 100%;
+        overflow-y: scroll;
+        scrollbar-color: $orange_color;
+        .scroll_box {
+          height: 120vh;
+          #search_box {
+            padding-bottom: 30px;
+            border-bottom: 2px solid $border_color;
+            .form_box {
+              @include display_flex;
+              background-color: $section_bg_color;
+              box-shadow: 0 0 1px 1px rgba($black_color, 0.1);
+              input {
+                @include paragraph_normal($color: $orange_color);
+                padding: 5px 20px;
+                border-right: 1px solid $orange_color;
+                width: 100%;
+              }
+              button {
+                border: none;
+                height: 100%;
+                span {
+                  @include icon_sm(
+                    $b_radius: 0%,
+                    $b_color: none,
+                    $height: 38px
+                  );
+                  @include display_flex;
+                }
+                &:hover {
+                  span {
+                    @include hover(
+                      $bg_color: $orange_color,
+                      $color: $white_color
+                    );
+                  }
+                }
+              }
+            }
+          }
+
+          #primary_menu {
+            padding: 30px 0;
+            display: block;
+            .nav_item {
+              a {
+                padding: 5px 10px;
+                @include paragraph_normal($color: $orange_color);
+                display: inline-block;
+                width: 100%;
+                border-bottom: 1px solid $border_color;
+                border-left: 5px solid transparent;
+                &:hover,
+                &.active {
+                  @include hover(
+                    $bg_color: $orange_color,
+                    $color: $white_color
+                  );
+                  border-left-color: $border_color;
+                }
+              }
+            }
+          }
+
+          #right_menu {
+            padding-top: 30px;
+            border-top: 2px solid $border_color;
+            a {
+              @include paragraph_normal;
+              @include display_flex($j_content: space-between);
+              padding: 5px 20px;
+              .text {
+                margin-left: 10px;
+              }
+
+              &:hover {
+                @include hover(
+                  $color: $orange_color,
+                  $bg_color: rgba($orange_color, 0.1)
+                );
+              }
+            }
+          }
+        }
+      }
+
+      &.show {
+        width: 300px;
+        @include show_hide(
+          $transform: translateX(1),
+          $visibility: visible,
+          $opacity: 1,
+          $transition: 0.6s
+        );
+      }
+    }
+    &.show {
+      @include show_hide(
+        $transform: translateX(1),
+        $visibility: visible,
+        $opacity: 1,
+        $transition: 0.4s
+      );
+      width: 100%;
+    }
+
+    /* === Start Responsive here === */
+    @include device_md {
+      display: block;
+    }
+    @include device_sm {
+      display: block;
+    }
+    @include device_xsm {
+      display: block;
+    }
+  }
+
+  /* === Start Responsive here === */
+
+  @include device_md {
+    #header_top {
+      .logo_box {
+        display: none;
+      }
+    }
+
+    #header_bottom {
+      .logo_box {
+        display: block;
+      }
+      .menu_box {
+        display: none;
+      }
+      #right_menu {
+        display: none;
+      }
+      #menu_toggler {
+        display: block;
+        margin-left: auto;
+      }
+    }
+  }
+  @include device_sm {
+    #header_top {
+      .logo_box {
+        display: none;
+      }
+    }
+
+    #header_bottom {
+      .logo_box {
+        display: block;
+      }
+      .menu_box {
+        display: none;
+      }
+      #right_menu {
+        display: none;
+      }
+      #menu_toggler {
+        display: block;
+        margin-left: auto;
+      }
+    }
+  }
+  @include device_xsm {
+    #header_top {
+      .logo_box {
+        display: none;
+      }
+      .user_box {
+        display: none;
+      }
+    }
+
+    #header_bottom {
+      .logo_box {
+        display: block;
+      }
+      .menu_box {
+        display: none;
+      }
+      #right_menu {
+        display: none;
+      }
+      #menu_toggler {
+        display: block;
+        margin-left: auto;
+      }
+    }
+  }
+}
